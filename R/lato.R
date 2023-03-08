@@ -61,11 +61,11 @@ use_poppins <- function(){
     font_dir_system <- '~/Library/Fonts'
   }
   font_dir <- system.file('fonts', 'poppins', package = 'ggdc')
-  if (!any(grepl('poppins', list.files(font_dir_system)))){
-    message("Copying Poppins font files to ", font_dir_system)
+  if (!any(grepl('poppins', list.files(font_dir)))){
+    message("Copying Poppins font files to ", font_dir)
     font_files <- list.files(font_dir, full.names = TRUE)
     for (font_file in font_files){
-      file.copy(font_file, font_dir_system)
+      file.copy(font_file, font_dir)
     }
   }
   suppressWarnings(suppressMessages(
